@@ -7,12 +7,47 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  background-color: #609af0;
+}
+
+h1 {
+  margin-bottom: 20px;
+
+  font:
+    72px Verdana,
+    sans-serif;
+  color: #000000;
+  font-weight: bold;
+  font-style: italic;
+}
+
+span {
+  font:
+    30px 'Courier New',
+    monospace;
+  font-weight: bold;
+  color: #ec05b3;
 }
 
 button {
   margin-right: 20px;
   padding: 8px 12px;
   cursor: pointer;
+
+  outline: none;
+}
+
+button:hover {
+  background-color: #1808a3;
+  color: #ffffff;
+}
+
+input {
+  padding: 8px;
+  margin-right: 20px;
+  border: 4px solid #000000;
+  outline: none;
 }
 
 .container {
@@ -20,5 +55,5 @@ button {
   justify-content: center;
   padding: 10px;
   margin-bottom: 20px;
-  border: 5px solid purple;
+  border: 5px solid #1808a3;
 }
