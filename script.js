@@ -45,3 +45,99 @@ addTextButton.addEventListener('click', () => {
 
 // Обновление отображения счетчика
 setInterval(() => countSpan.textContent++, 1000)
+
+// let count = 0
+// count += 1
+// console.log(count)
+
+// // const name = 'Алексей'
+// // console.log(name)
+
+// function greet(user) {
+//   return `Привет, ${user}!`
+// }
+// // console.log(greet(name))
+
+// function multiply(a, b) {
+//   return a * b
+// }
+
+// const sum = (x, y) => {
+//   return x + y
+// }
+
+// console.log(multiply(3, 4))
+// console.log(sum(5, 7))
+
+// function pow(n) {
+//   return n * n
+// }
+// console.log(pow(6))
+// console.log(pow(9))
+// console.log(pow(12))
+
+// const isEven = (num) => num % 2 === 0
+// console.log(isEven(10))
+// console.log(isEven(7))
+// console.log(isEven(22))
+
+// const numbers = [1, 2, 3, 4, 5]
+
+// const squaredNumbers = numbers.map((num) => num * num)
+// console.log(squaredNumbers)
+
+// const even = numbers.filter((num) => num % 2 === 0)
+// console.log(even)
+
+// const somOfNumbers = numbers.reduce((acc, n) => acc + n, 0)
+// console.log(somOfNumbers)
+
+// const names = ['Анна', 'Борис', 'Виктория', 'Дмитрий', 'Екатерина']
+
+// const longNames = names.filter((n) => n.length > 5)
+// console.log(longNames)
+
+// const sumOdd = numbers.filter((n) => n % 2 !== 0).reduce((acc, n) => acc + n, 0)
+// console.log(sumOdd)
+
+// const user = { name: 'Алексей', age: 25, city: 'Москва' }
+
+// const { name, age } = user
+
+// console.log(`${name}, ${age}`)
+
+// const newUser = { ...user, country: 'Россия' }
+// console.log(newUser)
+
+// const { city, ...rest } = newUser
+// console.log(rest)
+
+// const cat = {
+//   name: 'Мурка',
+//   meow() {
+//     console.log('Мяу!')
+//   },
+//   age: 3,
+//   color: 'серый',
+// }
+
+// const newCat = { ...cat, breed: 'Британская короткошерстная' }
+// console.log(newCat)
+
+// const { color, ...restCat} = newCat
+// console.log(restCat)
+const students = [
+  { name: 'Аня', score: 85 },
+  { name: 'Игорь', score: 92 },
+  { name: 'Лена', score: 78 },
+]
+
+students.filter(s => s.score > 80).map(newStudent => console.log(newStudent.name))
+
+console.log(students.reduce((acc, n) => (acc + n.score) / students.length, 0))
+const newStudents = students
+      .map(student => {
+        const passedStudents = {...student, passed: true}
+        return passedStudents
+      })
+console.log(newStudents)
