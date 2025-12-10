@@ -14,6 +14,8 @@ body {
 h1 {
   margin-bottom: 20px;
 
+  transition: 0.1s;
+
   font:
     72px Verdana,
     sans-serif;
@@ -56,4 +58,31 @@ input {
   padding: 10px;
   margin-bottom: 20px;
   border: 5px solid #1808a3;
+}
+
+.hilghlight {
+  color: purple;
+}
+
+.active {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.todo-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 3px solid #000000;
+  background-color: #ffffff;
+}
+
+ul li {
+  padding 5px;
+
+  cursor: pointer;
+}
+
+ul li:hover {
+  background-color: #1808a3;
+  color: #ffffff;
 }

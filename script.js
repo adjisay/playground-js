@@ -1,6 +1,6 @@
 const changeTextButton = document.getElementById('changeTextBtn')
 const alertButton = document.getElementById('alertBtn')
-const title = document.getElementById('title')
+// const title = document.getElementById('title')
 
 const addTextButton = document.getElementById('addText')
 const contentDiv = document.getElementById('content')
@@ -132,12 +132,87 @@ const students = [
   { name: 'Лена', score: 78 },
 ]
 
-students.filter(s => s.score > 80).map(newStudent => console.log(newStudent.name))
+students
+  .filter((s) => s.score > 80)
+  .map((newStudent) => console.log(newStudent.name))
 
 console.log(students.reduce((acc, n) => (acc + n.score) / students.length, 0))
-const newStudents = students
-      .map(student => {
-        const passedStudents = {...student, passed: true}
-        return passedStudents
-      })
+const newStudents = students.map((student) => {
+  const passedStudents = { ...student, passed: true }
+  return passedStudents
+})
 console.log(newStudents)
+
+const h2 = document.createElement('h2')
+h2.textContent = 'Day 3 - DOM practice'
+document.body.appendChild(h2)
+
+h2.style.color = 'teal'
+
+h2.classList.add('title')
+
+const title = document.querySelector('#title')
+
+title.textContent = 'JS DOM is fun!'
+
+title.classList.add('highlight')
+
+title.addEventListener('click', () => {
+  title.classList.toggle('active')
+})
+
+// document.body.addEventListener('click', (e) => {
+//   console.log('clicked on body', e.target)
+// })
+
+const taskInput = document.getElementById('taskInput')
+taskInput.addEventListener('input', () => {
+  console.log('Текущий ввод:', taskInput.value)
+})
+
+document.body.addEventListener('click', () => {
+  console.log('Clicked on body')
+})
+
+document.querySelector('#title').addEventListener('click', (e) => {
+  console.log('Clicked on title')
+  e.stopPropagation()
+})
+
+const btnAdd = document.createElement('button')
+btnAdd.textContent = 'Add paragraph'
+document.body.appendChild(btnAdd)
+
+btnAdd.addEventListener('click', () => {
+  const p = document.createElement('p')
+  p.textContent = 'Новый абзац ' + Math.random().toFixed(2)
+  document.body.appendChild(p)
+
+  p.addEventListener('click', () => {
+    p.remove()
+  })
+})
+
+// Todo List Application
+const todoInput = document.getElementById('todoInput')
+const addTodoBtn = document.getElementById('addTodoBtn')
+const todoList = document.getElementById('todoList')
+
+addTodoBtn.addEventListener('click', () => {
+  const task = todoInput.value.trim()
+
+  if (!task) {
+    console.log('Пожалуйста, введите задачу.')
+    return
+  }
+
+  const li = document.createElement('li')
+
+  li.addEventListener('click', () => {
+    li.remove()
+  })
+
+  li.textContent = task
+  todoList.appendChild(li)
+  todoInput.value = ''
+})
