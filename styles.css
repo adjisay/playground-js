@@ -1,14 +1,18 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Verdana, sans-serif;
 
   padding: 20px;
+  margin: 0;
 
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 
-  background-color: #609af0;
+  background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 h1 {
@@ -16,12 +20,12 @@ h1 {
 
   transition: 0.1s;
 
-  font:
-    72px Verdana,
-    sans-serif;
+  font-size: 72px;
   color: #000000;
   font-weight: bold;
-  font-style: italic;
+  text-transform: uppercase;
+
+  cursor: pointer;
 }
 
 span {
@@ -41,8 +45,8 @@ button {
 }
 
 button:hover {
-  background-color: #1808a3;
-  color: #ffffff;
+  background-color: #e73c7e;
+  color: #000000;
 }
 
 input {
@@ -55,9 +59,10 @@ input {
 .container {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 20px;
-  border: 5px solid #1808a3;
+  border: 5px solid blueviolet;
+  border-radius: 50px;
 }
 
 .hilghlight {
@@ -77,7 +82,9 @@ input {
 }
 
 ul li {
-  padding 5px;
+  padding: 5px;
+
+  border-radius: 10px;
 
   cursor: pointer;
 }
@@ -85,4 +92,55 @@ ul li {
 ul li:hover {
   background-color: #1808a3;
   color: #ffffff;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #000000;
+}
+
+.filters {
+  margin-top: 50px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filters button {
+  padding: 10px;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #23a6d5;
+
+  transition: 0.2s;
+}
+
+.filters button:hover {
+  background-color: #23d5ab;
+  color: #000000;
+}
+
+.done {
+  transition: 0.2s;
+
+  background-color: #23a6d5;
+}
+
+.done span {
+  text-decoration: underline;
+  color: #000000;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
